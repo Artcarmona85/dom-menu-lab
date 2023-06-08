@@ -1,28 +1,39 @@
-var menuLinks = [
-    {text: 'about', href: '/about'},
-    {text: 'catalog', href: '/catalog'},
-    {text: 'orders', href: '/orders'},
-    {text: 'account', href: '/account'},
-  ];
-  
-  
-  var mainEl = document.querySelector('main');
+// Task 1.0
+const mainEl = document.querySelector('main');
 
-  mainEl.style.backgroundColor = 'var(--main-bg)';
+// Task 1.1
+mainEl.style.backgroundColor = 'var(--main-bg)';
 
-  mainEl.innerHTML = '<h1>SEI Rocks!</h1>';
-  mainEl.classList.add('flex-ctr');
+// Task 1.2
+mainEl.innerHTML = '<h1>SEI Rocks!</h1>';
 
-  var topMenuEl = document.getElementById('top-menu');
+// Task 1.3
+mainEl.classList.add('flex-ctr');
 
-  topMenuEl.style.height = '100%'
-  topMenuEl.style.backgroundColor = 'var(--top-menu-bg)';
-  topMenuEl.classList.add('flex-around');
+// Task 2.0
+const topMenuEl = document.querySelector('#top-menu');
 
-  menuLinks.forEach(function(link) {
-    var linkEl = document.createElement('a');
-    linkEl.setAttribute('href', link.href);
-    linkEl.textContent = link.text;
-    topMenuEl.appendChild(linkEl);
-  });
-  
+// Task 2.1
+topMenuEl.style.height = '100%';
+
+// Task 2.2
+topMenuEl.style.backgroundColor = 'var(--top-menu-bg)';
+
+// Task 2.3
+topMenuEl.classList.add('flex-around');
+
+// Task 3.0
+const menuLinks = [
+  {text: 'about', href: '/about'},
+  {text: 'catalog', href: '/catalog'},
+  {text: 'orders', href: '/orders'},
+  {text: 'account', href: '/account'},
+];
+
+// Task 3.1
+for (let link of menuLinks) {
+  const aEl = document.createElement('a');
+  aEl.href = link.href;
+  aEl.textContent = link.text;
+  topMenuEl.appendChild(aEl);
+}
